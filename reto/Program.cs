@@ -1,33 +1,58 @@
-﻿// See https://aka.ms/new-console-template for more information
-//Creando mi primera lista
-/* Coords misCoordenadas = new Coords(2,10, 0);
-Console.WriteLine(misCoordenadas.X);
-Console.WriteLine(misCoordenadas.Y);
-Console.WriteLine(misCoordenadas.Z); */
-
-Dates misDates = new Dates("Laura", "+56944612393", "Mi dirección", "Mi email", true);
-Console.WriteLine(misDates.X);
-Console.WriteLine(misDates.Y);
-Console.WriteLine(misDates.Z);
-Console.WriteLine(misDates.Q);
-Console.WriteLine(misDates.P);
-
-public struct Dates
+﻿int i = 1;
+Console.WriteLine("WHILE: ");
+while(i <= 10)
 {
-    public Dates(string name, string phone, string address, string email, bool newUser)
-    {
-        X = name;
-        Y = phone;
-        Z = address;
-        Q = email;
-        P = newUser;
+    Console.WriteLine("1 x " + i + " = " + i );
+    i++;
+}
+
+/* Console.WriteLine("DO WHILE: ");
+int y = 1;
+do {
+    
+} while (y <= 10);
+Console.WriteLine("FOR"); */
+
+
+Console.WriteLine("Introduce el alto: ");
+int alto = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Introduce el ancho: ");
+int ancho = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("¿Quieres que tenga relleno?: ");
+string relleno = Console.ReadLine();
+
+Console.WriteLine("Introduce la cantidad: ");
+int cantidad = Convert.ToInt32(Console.ReadLine());
+
+for(int x=1; x<=cantidad; x++){
+    if ( relleno == "si" ) {
+    for(int s = 1; s <= alto; s++){
+        for ( int n = 1; n <= ancho; n++){
+            Console.Write(" *");
+        }
+        Console.WriteLine("");
+    }
+    Console.WriteLine(" ");
+} else {
+    for (int s = 0; s < alto; s++ ){
+        Console.Write(" *");
+    }
+    
+    for( int g = 0; g < ancho-2; g++){
+        Console.Write(" *");
+        for(int l = 0; l < ancho-2; l++){
+            Console.WriteLine(" ");
+        }
+        Console.Write(" *");
     }
 
-    public string X { get; }
-    public string Y { get; }
-    public string Z { get; }
-    public string Q { get; }
-    public bool P { get; }
+    for( int n = 0; n < ancho; n++){
+            Console.Write(" *");
+        }
+    Console.WriteLine(" ");
+}
 
-    public override string ToString() => $"({X}, {Y}, {Z}, {Q}, {P})";
+
 }
